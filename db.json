@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "The Future of AI in Music",
+      "excerpt": "Discover how artificial intelligence is reshaping the music industry...",
+      "content": "Full content of the article goes here. You can include multiple paragraphs, images, and other content as needed.",
+      "image": "Assets/featured-image.jpg",
+      "category": "music",
+      "date": "2025-01-01",
+      "author": "Your Name"
+    },
+    {
+      "id": 2,
+      "title": "Top 5 Coding Trends in 2025",
+      "excerpt": "Stay ahead with these emerging programming trends that are taking over the tech world...",
+      "content": "Detailed article content on coding trends. You can include code snippets, images, and links.",
+      "image": "Assets/tech1.jpg",
+      "category": "tech",
+      "date": "2025-01-02",
+      "author": "Your Name"
+    },
+    {
+      "id": 3,
+      "title": "How Streaming Changed the Music Industry",
+      "excerpt": "Explore the impact of streaming platforms on the evolution of music consumption...",
+      "content": "The complete story on how streaming services transformed the music industry. Include insights, data, and examples.",
+      "image": "Assets/music1.jpg",
+      "category": "music",
+      "date": "2025-01-03",
+      "author": "Your Name"
+    },
+    {
+      "id": 4,
+      "title": "Web3: The Future of the Internet",
+      "excerpt": "Understanding the new internet paradigm powered by blockchain and decentralization...",
+      "content": "Full content discussing Web3 innovations and their impact on various industries, including technology and creative arts.",
+      "image": "Assets/tech2.jpg",
+      "category": "tech",
+      "date": "2025-01-04",
+      "author": "Your Name"
+    }
+  ],
+  "about": {
+    "content": "Tech & Tunez is a one-page blog exploring the latest in technology and music. We bring you curated insights on tech trends and the creative influence of digital innovation on the music industry."
+  },
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "author": "Jane Doe",
+      "content": "Great insights on AI and music!"
+    },
+    {
+      "id": 2,
+      "postId": 2,
+      "author": "John Smith",
+      "content": "Really interesting take on coding trends."
+    }
+  ]
+}
