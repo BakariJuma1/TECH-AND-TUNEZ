@@ -19,17 +19,25 @@ function displayData() {
         <p>
           Discover how artificial intelligence is shaping the music industry.
         </p>
-        <div class="MoreContent">  
-        <p> extra hidden content goes here</P>
-        <a href="#">Read More</a>
+        <div class="moreContent">  
+           <p> extra hidden content goes here</P>
+         
         </div>
-      
+        <a href="#" class="read-more">Read More</a>
       </div>`;
 
   //creating an event listener for the read more button
-  const readMore = document.querySelector(".MoreContent");
-  readMore.addEventListener("click", () => {
+  const readMore = document.querySelector(".read-more");
+  readMore.addEventListener("click", (event) => {
     event.preventDefault();
-    const MoreContent = this.previousElementSibling;
+    const MoreContent = document.querySelector(".moreContent");
+
+    if (MoreContent.style.display === "none") {
+      MoreContent.style.display = "block";
+      readMore.textContent = "Read Less";
+    } else {
+      MoreContent.style.display = "none";
+      readMore.textContent = "Read More";
+    }
   });
 }
