@@ -4,20 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Tech & Music</title>
   </head>
   <body>
     <!-- Header Section -->
     <header>
-      <h1>Tech & Tunez</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#tech">Tech</a></li>
-          <li><a href="#music">Music</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="menuToggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="nav-left">
+            <ul>
+              <li><a href="#homeLi" class="active-link">Home</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-center">
+            <h1>Tech & Tunez</h1>
+          </div>
+
+          <div class="nav-right">
+            <ul>
+              <li><a href="#tech">Tech</a></li>
+              <li><a href="#music">Music</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact" class="accent-link">Contact</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -44,7 +65,12 @@
           />
           <h3>Top 5 Coding Trends in 2025</h3>
           <p>Stay ahead with these emerging programming trends.</p>
+          <div class="moreContent">
+            <p>The article supposed to be hidden</p>
+          </div>
+          <a href="#" class="read-more">Read More</a>
         </article>
+
         <article>
           <img
             src="https://cdn.pixabay.com/photo/2024/06/03/14/26/ai-generated-8806556_1280.jpg"
@@ -52,6 +78,10 @@
           />
           <h3>Web3: The Future of the Internet</h3>
           <p>Understanding the next evolution of the internet.</p>
+          <div class="moreContent">
+            <p>The article supposed to be hidden</p>
+          </div>
+          <a href="#" class="read-more">Read More</a>
         </article>
       </div>
     </section>
@@ -67,6 +97,10 @@
           />
           <h3>How Streaming Changed the Music Industry</h3>
           <p>The impact of platforms like Spotify & Apple Music.</p>
+          <div class="moreContent">
+            <p>The article supposed to be hidden</p>
+          </div>
+          <a href="#" class="read-more">Read More</a>
         </article>
         <article>
           <img
@@ -75,6 +109,10 @@
           />
           <h3>Music Production in the Digital Age</h3>
           <p>How technology is reshaping music creation.</p>
+          <div class="moreContent">
+            <p>The article supposed to be hidden</p>
+          </div>
+          <a href="#" class="read-more">Read More</a>
         </article>
       </div>
     </section>
@@ -91,7 +129,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Us</h2>
-      <form>
+      <form id="contact">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message"></textarea>
