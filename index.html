@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/9f687dea4d.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Tech & Music</title>
   </head>
   <body>
@@ -20,6 +20,14 @@
             <div class="bar"></div>
             <div class="bar"></div>
           </div>
+          <img
+            id="darkMode"
+            src="https://cdn-icons-png.flaticon.com/128/1687/1687788.png"
+            alt="Toggle Dark Mode"
+            style="cursor: pointer"
+          />
+
+          />
           <div class="nav-left">
             <ul>
               <li><a href="#homeLi" class="active-link">Home</a></li>
@@ -56,7 +64,7 @@
 
     <!-- Tech Section -->
     <section id="tech">
-      <h2>Latest in Tech</h2>
+      <h2 style="text-align: center">Latest in Tech</h2>
       <div class="blog-posts">
         <article>
           <img
@@ -88,7 +96,7 @@
 
     <!-- Music Section -->
     <section id="music">
-      <h2>Music Trends & Insights</h2>
+      <h2 style="text-align: center">Music Trends & Insights</h2>
       <div class="blog-posts">
         <article>
           <img
@@ -128,7 +136,7 @@
 
     <!-- Contact Section -->
     <section id="contact">
-      <h2>Contact Us</h2>
+      <h2>Contact Us <i class="fa-solid fa-phone"></i></h2>
       <form id="contact">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
@@ -141,9 +149,14 @@
     <footer>
       <p>&copy; 2025 Tech & Tunez. All rights reserved.</p>
       <div class="social-icons">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
+        <i class="fa-brands fa-facebook"
+          ><a
+            href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"
+          ></a
+        ></i>
+        <i class="fa-brands fa-x-twitter"><a href="#"></a></i>
+
+        <i class="fa-brands fa-instagram"><a href="#"></a></i>
       </div>
     </footer>
     <script src="script.js"></script>

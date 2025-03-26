@@ -1,4 +1,9 @@
-document.addEventListener("DOMContentLoaded", displayData);
+document.addEventListener("DOMContentLoaded", function () {
+  displayData();
+  navigationBar();
+  changeMode();
+  form();
+});
 
 function displayData() {
   fetch("http://localhost:4000/posts")
@@ -15,7 +20,7 @@ function displayData() {
         // Access the home div and update the content using fetched data
         const home = document.getElementById("home");
         home.innerHTML = `
-          <img src="featured-image.jpg" alt="Featured Article" />
+           <img src="featured-image.jpg" alt="" />
           <div class="featured-content">
             <h2>${post.title}</h2>
             <p>${post.excerpt}</p>
@@ -28,7 +33,6 @@ function displayData() {
             <a href="#" class="read-more">Read More</a>
           </div>
         `;
-
         // Create an event listener for the read more button
         const readMoreButtons = document.querySelectorAll(".read-more");
         readMoreButtons.forEach((button) => {
@@ -38,7 +42,7 @@ function displayData() {
 
             if (
               moreContent.style.display === "none" ||
-              moreContent.style.display === ""
+              moreContent.style.display === "" //
             ) {
               moreContent.style.display = "block";
               button.textContent = "Read Less";
@@ -50,21 +54,52 @@ function displayData() {
         });
       }
     });
+}
 
-  //nav bar responsive for small screens
-  const menu = document.getElementById("menu-toggle");
-  const nav = document.querySelectorAll(".nav-left, .nav-center ,nav-right");
-  console.log(nav, menu);
-  menu.addEventListener("click", function () {
-    nav.classList.toggle("show");
+//Adding dark mode / light mode
+function changeMode() {
+  const darkModeToggle = document.getElementById("darkMode");
+  const body = document.body;
+
+  if (!darkModeToggle) {
+    console.error("Dark mode toggle button not found!");
+    return;
+  }
+
+  darkModeToggle.addEventListener("click", function () {
+    body.classList.toggle("dark-mode");
   });
+}
 
-  //submitting form
+//nav bar responsive for small screens
+function navigationBar() {
+  const menu = document.querySelector(".menuToggle");
+  const nav = document.querySelector(".nav-container");
+
+  if (menu && nav) {
+    menu.addEventListener("click", function () {
+      nav.classList.toggle("nav-active");
+    });
+  }
+  // Close menu when clicking on a link
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    //goes through all the navigation links
+    link.addEventListener("click", function () {
+      console.log("clicked");
+      nav.classList.remove("nav-active");
+    });
+  });
+}
+
+//submitting form
+function form() {
   const contactUs = document.getElementById("contact");
   contactUs.addEventListener("submit", submitInfo);
 
   function submitInfo() {
     event.preventDefault();
     console.log("am clicked");
+    alert("Thank youfor your message,ill get back to you in a few");
   }
 }

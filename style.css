@@ -113,13 +113,28 @@ nav a.accent-link {
 nav a.accent-link:hover {
   background-color: #ffcdb2; /* Lighter version of accent color */
 }
-.bar {
-  width: 30px;
-  height: 3px;
-  background-color: var(--text-color);
-  margin: 6px 0;
-  transition: 0.4s;
-  border-radius: 2px;
+#darkMode {
+  background-color: #121212;
+  color: white;
+  flex: 0;
+  align-items: left;
+  margin-right: 100px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+}
+#darkMode {
+  background-color: #222;
+}
+.dark-mode nav a {
+  color: #fff;
+}
+#darkMode a {
+  color: #ffb996;
+}
+#darkMode footer {
+  background-color: #222;
 }
 /* Featured Section */
 .featured {
@@ -232,9 +247,18 @@ footer {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
-
+@media only screen and (man-width: 768px) {
+}
 @media only screen and (max-width: 768px) {
-  .menu-toggle {
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+  .menuToggle {
     display: block;
   }
 
