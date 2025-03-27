@@ -76,6 +76,7 @@ function displayOtherPosts() {
 
       // Add each post to the correct section
       otherPosts.forEach((post) => {
+        console.log("working");
         const postHTML = `
           <article>
             <img src="${post.image}" alt="${post.title}" />
