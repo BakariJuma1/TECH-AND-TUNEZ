@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function displayData() {
-  fetch("https://tech-and-tunez.onrender.com")
+  fetch("https://tech-and-tunez.onrender.com/posts")
     .then((res) => res.json())
     .then((data) => {
       if (data.length > 0) {
