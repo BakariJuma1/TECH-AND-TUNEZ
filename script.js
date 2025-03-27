@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   displayData(); //displays the first post
   navigationBar(); //functionality to  the harmburger menu
   changeMode(); //changes between lightmode and dark mode
-  double();
+  // double();
   form();
 });
 
@@ -16,6 +16,7 @@ function displayData() {
         // Log each post for testing
         data.forEach((item) => {
           console.log(item);
+          console.log("hellooo");
         });
 
         // Access the home div and update the content using fetched data
@@ -58,7 +59,7 @@ function displayData() {
 }
 
 function displayOtherPosts() {
-  fetch("http://localhost:4000/posts")
+  fetch("https://tech-and-tunez.onrender.com/posts")
     .then((res) => res.json())
     .then((data) => {
       // Skip the first post
@@ -108,6 +109,7 @@ function changeMode() {
   darkModeToggle.addEventListener("click", function () {
     body.classList.toggle("dark-mode");
     darkModeToggle.style = "background-color:white";
+    console.log("i was clicked");
   });
 }
 
