@@ -19,6 +19,7 @@ function displayData() {
           console.log("hellooo");
         });
 
+        // <img>${post.image}</img>
         // Access the home div and update the content using fetched data
         const home = document.getElementById("home");
         home.innerHTML = `
@@ -28,7 +29,7 @@ function displayData() {
             <p>${post.excerpt}</p>
             <div class="moreContent" >  
                <p class="moreArticle" >${post.content}</p>
-               <img>${post.image}</img>
+             
                <span>Written by${post.author}</span>
                <span>${post.date}</span>
             </div>

@@ -194,7 +194,9 @@ button {
   background: var(--contact-bg);
   border-radius: var(--radius-lg);
 }
-
+#contact h2 {
+  text-align: center;
+}
 form input,
 form textarea {
   width: 100%;
@@ -204,7 +206,12 @@ form textarea {
   border: none;
   box-shadow: var(--shadow-sm);
 }
-
+#btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 /* ===== Footer ===== */
 footer {
   text-align: center;
