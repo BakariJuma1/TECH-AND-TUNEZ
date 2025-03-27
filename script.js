@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navigationBar(); //functionality to  the harmburger menu
   changeMode(); //changes between lightmode and dark mode
   displayOtherPosts();
+  setupReadMoreButtons();
   // double();
   form();
 });
@@ -38,24 +39,6 @@ function displayData() {
           </div>
         `;
         // Create an event listener for the read more button
-        const readMoreButtons = document.querySelectorAll(".read-more");
-        readMoreButtons.forEach((button) => {
-          button.addEventListener("click", (event) => {
-            event.preventDefault();
-            const moreContent = button.previousElementSibling; // Assuming .moreContent is right before the button
-
-            if (
-              moreContent.style.display === "none" ||
-              moreContent.style.display === "" //
-            ) {
-              moreContent.style.display = "block";
-              button.textContent = "Read Less";
-            } else {
-              moreContent.style.display = "none";
-              button.textContent = "Read More";
-            }
-          });
-        });
       }
     });
 }
@@ -103,6 +86,27 @@ function displayOtherPosts() {
       //  read more buttons for the new posts
       setupReadMoreButtons();
     });
+}
+
+function setupReadMoreButtons() {
+  const readMoreButtons = document.querySelectorAll(".read-more");
+  readMoreButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const moreContent = button.previousElementSibling; // Assuming .moreContent is right before the button
+
+      if (
+        moreContent.style.display === "none" ||
+        moreContent.style.display === "" //
+      ) {
+        moreContent.style.display = "block";
+        button.textContent = "Read Less";
+      } else {
+        moreContent.style.display = "none";
+        button.textContent = "Read More";
+      }
+    });
+  });
 }
 
 //Adding dark mode / light mode

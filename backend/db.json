@@ -15,30 +15,30 @@
       "title": "Top 5 Coding Trends in 2025",
       "excerpt": "Stay ahead with these emerging programming trends that are taking over the tech world...",
       "content": "The tech world is evolving rapidly, and 2025 brings exciting advancements in software development. AI-powered tools are revolutionizing coding by assisting in writing, debugging, and optimizing code, making development faster and more efficient. Low-code and no-code platforms are also on the rise, enabling users to create applications with minimal programming knowledge. Quantum computing is becoming more practical, with developers exploring quantum programming languages like Qiskit and Cirq. Additionally, edge computing is gaining traction, enhancing application performance by processing data closer to users. With increasing cyber threats, cybersecurity-first development is now essential, integrating security measures directly into the software development lifecycle. Staying ahead in coding means adapting to these trends and embracing the future of technology..",
-      "image": "Assets/tech1.jpg",
+      "image": "https://cdn.pixabay.com/photo/2014/12/30/08/13/technology-583694_1280.jpg",
       "category": "tech",
       "date": "2025-01-02",
-      "author": "Your Name"
+      "author": "Ken kamau"
     },
     {
       "id": 3,
       "title": "How Streaming Changed the Music Industry",
       "excerpt": "Explore the impact of streaming platforms on the evolution of music consumption...",
       "content": "Streaming has revolutionized the music industry by making music more accessible and shifting revenue models from physical sales to digital subscriptions. Artists now rely on streaming platforms for exposure and income, while algorithms shape listener preferences. Though it democratized music distribution, streaming also sparked debates on fair artist compensation..",
-      "image": "Assets/music1.jpg",
+      "image": "https://cdn.pixabay.com/photo/2024/06/03/14/26/ai-generated-8806556_1280.jpg",
       "category": "music",
       "date": "2025-01-03",
-      "author": "Your Name"
+      "author": "ITS_BARAJU"
     },
     {
       "id": 4,
       "title": "Web3: The Future of the Internet",
       "excerpt": "Understanding the new internet paradigm powered by blockchain and decentralization...",
       "content": "Web3 is reshaping the internet by decentralizing data and empowering users with blockchain technology. Unlike Web2, where tech giants control platforms, Web3 enables peer-to-peer interactions, smart contracts, and true digital ownership. While still evolving, it promises greater security, transparency, and user control over online experiences..",
-      "image": "Assets/tech2.jpg",
+      "image": "https://cdn.pixabay.com/photo/2022/10/01/11/34/youtube-7491354_1280.png",
       "category": "tech",
       "date": "2025-01-04",
-      "author": "Your Name"
+      "author": "ENg:John Wangwe"
     }
   ],
   "comments": [
