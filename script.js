@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   displayData(); //displays the first post
   navigationBar(); //functionality to  the harmburger menu
   changeMode(); //changes between lightmode and dark mode
+  displayOtherPosts();
   // double();
   form();
 });
