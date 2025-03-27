@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  displayData();
-  navigationBar();
-  changeMode();
+  displayData(); //displays the first post
+  navigationBar(); //functionality to  the harmburger menu
+  changeMode(); //changes between lightmode and dark mode
+  double();
   form();
 });
 
 function displayData() {
-  fetch("http://localhost:4000/posts")
+  fetch("http://localhost:3001/posts")
     .then((res) => res.json())
     .then((data) => {
       if (data.length > 0) {
@@ -56,18 +57,57 @@ function displayData() {
     });
 }
 
+function displayOtherPosts() {
+  fetch("http://localhost:4000/posts")
+    .then((res) => res.json())
+    .then((data) => {
+      // Skip the first post
+      const otherPosts = data.slice(1);
+
+      // Get the tech and music sections from your existing HTML
+      const techSection = document.querySelector("#tech .blog-posts");
+      const musicSection = document.querySelector("#music .blog-posts");
+
+      // Clear the placeholder articles that are currently in your HTML
+      techSection.innerHTML = "";
+      musicSection.innerHTML = "";
+
+      // Add each post to the correct section
+      otherPosts.forEach((post) => {
+        const postHTML = `
+          <article>
+            <img src="${post.image}" alt="${post.title}" />
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+            <div class="moreContent" style="display: none;">
+              <p>${post.content}</p>
+              <span>By ${post.author}</span>
+              <span>${post.date}</span>
+            </div>
+            <a href="#" class="read-more">Read More</a>
+          </article>
+        `;
+
+        // Add to tech or music section based on category
+        if (post.category === "tech") {
+          techSection.insertAdjacentHTML("beforeend", postHTML);
+        } else if (post.category === "music") {
+          musicSection.insertAdjacentHTML("beforeend", postHTML);
+        }
+      });
+
+      //  read more buttons for the new posts
+      setupReadMoreButtons();
+    });
+}
+
 //Adding dark mode / light mode
 function changeMode() {
   const darkModeToggle = document.getElementById("darkMode");
   const body = document.body;
-
-  if (!darkModeToggle) {
-    console.error("Dark mode toggle button not found!");
-    return;
-  }
-
   darkModeToggle.addEventListener("click", function () {
     body.classList.toggle("dark-mode");
+    darkModeToggle.style = "background-color:white";
   });
 }
 
@@ -98,8 +138,8 @@ function form() {
   contactUs.addEventListener("submit", submitInfo);
 
   function submitInfo() {
-    event.preventDefault();
+    event.preventDefault(); //prevent the default behaviour of reloading
     console.log("am clicked");
-    alert("Thank youfor your message,ill get back to you in a few");
+    alert("Thank youfor your message,ill get back to you in a few"); //an alert to the user
   }
 }

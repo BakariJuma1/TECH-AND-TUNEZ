@@ -1,0 +1,309 @@
+/* ===== CSS Variables ===== */
+:root {
+  --primary-color: #333;
+  --text-color: #fff;
+  --hover-color: #555;
+  --accent-color: #ffb996;
+  --card-bg: #fff;
+  --contact-bg: #dceaf2;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.2);
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* Dark mode variables */
+  --dark-bg: #121212;
+  --dark-nav: #1e1e1e;
+  --dark-card: #222;
+  --dark-input: #333;
+}
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5ede5;
+  color: #333;
+  margin: 0;
+  padding-top: 70px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+.nav-left,
+.nav-right {
+  flex: 1;
+}
+.nav-center {
+  text-align: center;
+  flex: 2;
+}
+
+nav {
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--hover-color);
+  width: 100%;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+nav:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+}
+
+nav li {
+  display: flex;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.5em 1em;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+nav a:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+nav a.active-link {
+  border-bottom: 2px solid var(--text-color);
+  font-weight: 600;
+}
+
+nav a.accent-link {
+  background-color: var(--accent-color);
+}
+
+nav a.accent-link:hover {
+  background-color: #ffcdb2;
+}
+
+#darkMode {
+  background-color: #222;
+  color: white;
+  margin-right: 100px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  /* padding: 10px; */
+}
+
+/* ===== Content Sections ===== */
+section {
+  width: 80%;
+  margin: 2em auto;
+  padding: 2em 0;
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url("https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A=");
+  padding: 40px;
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+article {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+/* ===== Common Elements ===== */
+img {
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.moreContent {
+  display: none;
+}
+
+.button,
+.read-more,
+button {
+  text-decoration: none;
+  background: var(--accent-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+#contact {
+  background: var(--contact-bg);
+  border-radius: var(--radius-lg);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
+  width: 100%;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* ===== Dark Mode Styles ===== */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: #ffffff;
+}
+
+body.dark-mode nav,
+body.dark-mode header {
+  background-color: var(--dark-nav);
+}
+
+body.dark-mode article {
+  background-color: var(--dark-card);
+}
+
+body.dark-mode #contact {
+  background-color: var(--dark-nav);
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background-color: var(--dark-input);
+  color: #fff;
+}
+
+/* ===== Media Queries ===== */
+@media only screen and (max-width: 768px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    z-index: 1000;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+  }
+  .nav-center {
+    flex: 1;
+  }
+  #darkMode {
+    margin: 20px;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    width: 100%;
+    text-align: center;
+  }
+  nav a {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* Active state */
+  .nav-active .nav-left,
+  .nav-active .nav-right {
+    display: flex;
+  }
+
+  /* Hamburger icon */
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .nav-active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .nav-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
