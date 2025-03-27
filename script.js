@@ -73,6 +73,8 @@ function displayOtherPosts() {
             </div>
             <a href="#" class="read-more">Read More</a>
           </article>
+
+          
         `;
 
         // Add to tech or music section based on category

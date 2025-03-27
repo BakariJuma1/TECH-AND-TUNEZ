@@ -25,7 +25,7 @@
       "title": "How Streaming Changed the Music Industry",
       "excerpt": "Explore the impact of streaming platforms on the evolution of music consumption...",
       "content": "Streaming has revolutionized the music industry by making music more accessible and shifting revenue models from physical sales to digital subscriptions. Artists now rely on streaming platforms for exposure and income, while algorithms shape listener preferences. Though it democratized music distribution, streaming also sparked debates on fair artist compensation..",
-      "image": "https://cdn.pixabay.com/photo/2024/06/03/14/26/ai-generated-8806556_1280.jpg",
+      "image": "https://cdn.pixabay.com/photo/2022/10/01/11/34/youtube-7491354_1280.png",
       "category": "music",
       "date": "2025-01-03",
       "author": "ITS_BARAJU"
@@ -35,7 +35,17 @@
       "title": "Web3: The Future of the Internet",
       "excerpt": "Understanding the new internet paradigm powered by blockchain and decentralization...",
       "content": "Web3 is reshaping the internet by decentralizing data and empowering users with blockchain technology. Unlike Web2, where tech giants control platforms, Web3 enables peer-to-peer interactions, smart contracts, and true digital ownership. While still evolving, it promises greater security, transparency, and user control over online experiences..",
-      "image": "https://cdn.pixabay.com/photo/2022/10/01/11/34/youtube-7491354_1280.png",
+      "image": "https://cdn.pixabay.com/photo/2024/06/03/14/26/ai-generated-8806556_1280.jpg",
+      "category": "tech",
+      "date": "2025-01-04",
+      "author": "ENg:John Wangwe"
+    },
+    {
+      "id": 4,
+      "title": "Music Production in the Digital Age",
+      "excerpt": "How technology is reshaping music creation...",
+      "content": "",
+      "image": "https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A=",
       "category": "tech",
       "date": "2025-01-04",
       "author": "ENg:John Wangwe"
