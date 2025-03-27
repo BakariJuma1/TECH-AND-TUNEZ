@@ -22,14 +22,14 @@ function displayData() {
         // Access the home div and update the content using fetched data
         const home = document.getElementById("home");
         home.innerHTML = `
-           <img src="featured-image.jpg" alt="" />
+        
           <div class="featured-content">
             <h2>${post.title}</h2>
             <p>${post.excerpt}</p>
             <div class="moreContent" >  
-               <p>${post.content}</p>
+               <p class="moreArticle" >${post.content}</p>
                <img>${post.image}</img>
-               <span>${post.author}</span>
+               <span>Written by${post.author}</span>
                <span>${post.date}</span>
             </div>
             <a href="#" class="read-more">Read More</a>

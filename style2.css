@@ -147,6 +147,7 @@ section {
   background-image: url("https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A=");
   padding: 40px;
   color: white;
+  word-wrap: break-word;
   border-radius: var(--radius-lg);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -305,5 +306,77 @@ body.dark-mode form textarea {
   }
   .nav-active .bar:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
+  }
+  #home {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+    /* max-width: 90%; */
+  }
+  .featured {
+    width: 100%; /* Make it responsive */
+    max-width: 600px; /* Limit its size on larger screens */
+    padding: 20px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  .featured {
+    padding: 20px;
+    font-size: 1rem; /* Reduce font size for better readability */
+  }
+
+  .featured h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+
+  .featured p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .featured {
+    width: 95%; /* Adjust width for better fit */
+    padding: 15px; /* Reduce padding */
+    font-size: 0.9rem; /* Reduce text size */
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-md);
+    word-wrap: break-word; /* Break long words */
+    overflow: hidden; /* Prevents content overflow */
+    text-align: center;
+  }
+
+  .featured h2 {
+    font-size: 1.3rem; /* Adjust heading size */
+  }
+
+  .featured p {
+    font-size: 0.9rem; /* Ensure text is readable */
+    line-height: 1.4;
+    overflow-wrap: break-word;
+  }
+
+  .featured img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+
+  .featured::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Add overlay for better text visibility */
+    border-radius: var(--radius-md);
+  }
+
+  .featured * {
+    position: relative;
+    z-index: 2;
   }
 }
