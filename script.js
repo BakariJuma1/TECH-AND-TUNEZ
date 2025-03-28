@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   changeMode(); //changes between lightmode and dark mode
   displayOtherPosts();
   setupCommentFunctionality();
+
   setupReadMoreButtons();
   // double();
   form();
@@ -38,25 +39,29 @@ function displayData() {
                <div class="comments-section">
                  <h3>Comments</h3>
                  <ul class="comments-list">
-              ${
-                post.comments
-                  ? post.comments
-                      .map((comment) => `<li class="comment">${comment}</li>`)
-                      .join("")
-                  : ""
-              }
-            </ul>
-            <input type="text" class="comment-input" placeholder="Add a comment...">
-            <button class="comment-btn" data-id="${
-              post.id
-            }">Post Comment</button>
-          </div>
-          </div>
+                    ${
+                      post.comments
+                        ? post.comments
+                            .map(
+                              (comment) => `<li class="comment">${comment}</li>`
+                            )
+                            .join("")
+                        : ""
+                    }
+                 </ul>
+                 <input type="text" class="comment-input" placeholder="Add a comment...">
+                 <button class="comment-btn" data-id="${
+                   post.id
+                 }">Post Comment</button>
+               </div>
+               
             </div>
+          </div>
             <a href="#" class="read-more">Read More</a>
           </div>
          
         `;
+        setupReadMoreButtons();
         setupCommentFunctionality();
         // Create an event listener for the read more button
       }
@@ -106,7 +111,7 @@ function displayOtherPosts() {
           musicSection.insertAdjacentHTML("beforeend", postHTML);
         }
       });
-
+      setupCommentFunctionality();
       //  read more buttons for the new posts
       setupReadMoreButtons();
     });
