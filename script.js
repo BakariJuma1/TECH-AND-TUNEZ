@@ -251,6 +251,49 @@ function navigationBar() {
   });
 }
 //adding blog section
+function addBlog() {
+  const form = document.querySelector("#blogForm");
+  console.log(form);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    console.log("clicked");
+
+    const tittle = document.getElementById("tittle").value;
+    const author = document.getElementById("author").value;
+    const category = document.getElementById("category").value;
+    // const excerpt = document.getElementById("excerpt").value;
+    const content = document.getElementById("content").value;
+    const image = document.getElementById("image").value;
+    const date = new Date().toLocaleDateString();
+
+    //creating a blog object
+    const newPost = {
+      tittle,
+      author,
+      category,
+      content,
+      image,
+      comments: [],
+      excerpt: content.subString(0, 100) + "...", //create a short preview
+    };
+  });
+
+  //sending it to server
+  fetch("", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(newPost),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      alert("Blog added successfully ");
+      addBlogToPage(data); //update ui
+      document.getElementById("blogForm").requestFullscreen(); //clear form field
+    });
+}
+
+//adding blog to page
 
 //submitting form
 function form() {
