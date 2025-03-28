@@ -54,7 +54,6 @@ function displayData() {
                    post.id
                  }">Post Comment</button>
                </div>
-               
             </div>
           </div>
             <a href="#" class="read-more">Read More</a>
@@ -156,23 +155,23 @@ function setupCommentFunctionality() {
 }
 
 function setupReadMoreButtons() {
-  const readMoreButtons = document.querySelectorAll(".read-more");
-  readMoreButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("read-more")) {
       event.preventDefault();
-      const moreContent = button.previousElementSibling; // Assuming .moreContent is right before the button
-
-      if (
-        moreContent.style.display === "none" ||
-        moreContent.style.display === "" //
-      ) {
-        moreContent.style.display = "block";
-        button.textContent = "Read Less";
-      } else {
-        moreContent.style.display = "none";
-        button.textContent = "Read More";
+      const moreContent = event.target.previousElementSibling;
+      if (moreContent && moreContent.classList.contains("moreContent")) {
+        if (
+          moreContent.style.display === "none" ||
+          moreContent.style.display === ""
+        ) {
+          moreContent.style.display = "block";
+          event.target.textContent = "Read Less";
+        } else {
+          moreContent.style.display = "none";
+          event.target.textContent = "Read More";
+        }
       }
-    });
+    }
   });
 }
 
