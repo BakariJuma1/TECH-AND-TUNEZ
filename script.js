@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navigationBar(); //functionality to  the harmburger menu
   changeMode(); //changes between lightmode and dark mode
   displayOtherPosts();
+  setupCommentFunctionality();
   setupReadMoreButtons();
   // double();
   form();
