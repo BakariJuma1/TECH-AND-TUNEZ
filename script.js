@@ -33,24 +33,30 @@ function displayData() {
                <p class="moreArticle" >${post.content}</p>
                <span>Written by${post.author}</span>
                <span>${post.date}</span>
+               
+               <div class="comments-section">
+                 <h3>Comments</h3>
+                 <ul class="comments-list">
+              ${
+                post.comments
+                  ? post.comments
+                      .map((comment) => `<li class="comment">${comment}</li>`)
+                      .join("")
+                  : ""
+              }
+            </ul>
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" data-id="${
+              post.id
+            }">Post Comment</button>
+          </div>
+          </div>
             </div>
             <a href="#" class="read-more">Read More</a>
           </div>
-          <div class ="comments-section">
-          <h3>comments</h3>
-           <ul class="comments-list">
-                ${
-                  post.comments
-                    ? post.comments
-                        .map((comment) => `<li>${comment}</li>`)
-                        .join("")
-                    : ""
-                }
-              </ul>
-               <input type="text" class="comment-input" placeholder="Add a comment...">
-              <button class="comment-btn">Post Comment</button>
-          </div>
+         
         `;
+        setupCommentFunctionality();
         // Create an event listener for the read more button
       }
     });
@@ -83,8 +89,10 @@ function displayOtherPosts() {
               <p>${post.content}</p>
               <span>By ${post.author}</span>
               <span>${post.date}</span>
+              
             </div>
             <a href="#" class="read-more">Read More</a>
+
           </article>
 
           
@@ -101,6 +109,44 @@ function displayOtherPosts() {
       //  read more buttons for the new posts
       setupReadMoreButtons();
     });
+}
+
+// Enable comments functionality
+function setupCommentFunctionality() {
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("comment-btn")) {
+      const postId = event.target.getAttribute("data-id");
+      const commentInput = event.target.previousElementSibling;
+      const newComment = commentInput.value.trim();
+
+      if (newComment !== "") {
+        fetch(`https://tech-and-tunez.onrender.com/posts/${postId}`)
+          .then((res) => res.json())
+          .then((post) => {
+            const updatedComments = post.comments
+              ? [...post.comments, newComment]
+              : [newComment];
+            return fetch(
+              `https://tech-and-tunez.onrender.com/posts/${postId}`,
+              {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ comments: updatedComments }),
+              }
+            );
+          })
+          .then(() => {
+            const commentList =
+              event.target.parentElement.querySelector(".comments-list");
+            commentList.insertAdjacentHTML(
+              "beforeend",
+              `<li class="comment">${newComment}</li>`
+            );
+            commentInput.value = "";
+          });
+      }
+    }
+  });
 }
 
 function setupReadMoreButtons() {
