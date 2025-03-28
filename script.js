@@ -159,7 +159,7 @@ function handleCommentClick(event) {
             event.target.parentElement.querySelector(".comments-list");
           commentList.insertAdjacentHTML(
             "beforeend",
-            `<li class="comment">${newComment} <button class="delete-comment" data-id="${postId}" data-index="${commentList.children.length}">❌</button></li>`
+            `<li class="comment">${newComment} <button class="delete-comment" data-id="${postId}" data-index="${commentList.children.length}">delete</button></li>`
           );
           commentInput.value = "";
         })
