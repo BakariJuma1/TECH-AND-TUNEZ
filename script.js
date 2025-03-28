@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   displayOtherPosts();
   setupCommentFunctionality();
   setupReadMoreButtons();
+  addBlog();
   // double();
   form();
 });
@@ -253,44 +254,50 @@ function navigationBar() {
 //adding blog section
 function addBlog() {
   const form = document.querySelector("#blogForm");
-  console.log(form);
+
+  if (!form) {
+    console.error("Form not found!");
+    return;
+  }
+
+  console.log(`am working ${form}`);
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     console.log("clicked");
 
-    const tittle = document.getElementById("tittle").value;
+    const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const category = document.getElementById("category").value;
-    // const excerpt = document.getElementById("excerpt").value;
-    const content = document.getElementById("content").value;
+    const contentElement = document.getElementById("content");
+    const content = contentElement ? contentElement.value : "";
     const image = document.getElementById("image").value;
     const date = new Date().toLocaleDateString();
 
-    //creating a blog object
+    // Creating a blog object
     const newPost = {
-      tittle,
+      title,
       author,
       category,
       content,
       image,
       comments: [],
-      excerpt: content.subString(0, 100) + "...", //create a short preview
+      excerpt: content ? content.substring(0, 100) + "..." : "", // Short preview
     };
-  });
 
-  //sending it to server
-  fetch("", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(newPost),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      alert("Blog added successfully ");
-      addBlogToPage(data); //update ui
-      document.getElementById("blogForm").requestFullscreen(); //clear form field
-    });
+    // Sending it to the server
+    fetch("https://tech-and-tunez.onrender.com/posts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Blog added successfully");
+        addBlogToPage(data); // Update UI
+        document.getElementById("blogForm").reset(); // Clear form fields
+      });
+  });
 }
 
 //adding blog to page
