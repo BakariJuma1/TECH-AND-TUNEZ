@@ -31,11 +31,24 @@ function displayData() {
             <p>${post.excerpt}</p>
             <div class="moreContent" >  
                <p class="moreArticle" >${post.content}</p>
-             
                <span>Written by${post.author}</span>
                <span>${post.date}</span>
             </div>
             <a href="#" class="read-more">Read More</a>
+          </div>
+          <div class ="comments-section">
+          <h3>comments</h3>
+           <ul class="comments-list">
+                ${
+                  post.comments
+                    ? post.comments
+                        .map((comment) => `<li>${comment}</li>`)
+                        .join("")
+                    : ""
+                }
+              </ul>
+               <input type="text" class="comment-input" placeholder="Add a comment...">
+              <button class="comment-btn">Post Comment</button>
           </div>
         `;
         // Create an event listener for the read more button
