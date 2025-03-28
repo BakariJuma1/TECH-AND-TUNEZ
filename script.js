@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   changeMode(); //changes between lightmode and dark mode
   displayOtherPosts();
   setupCommentFunctionality();
-
   setupReadMoreButtons();
   // double();
   form();
@@ -15,9 +14,8 @@ function displayData() {
     .then((res) => res.json())
     .then((data) => {
       if (data.length > 0) {
-        const post = data[0]; // use the first post
+        const post = data[0]; // First post
 
-        // Access the home div and update the content using fetched data
         const home = document.getElementById("home");
         home.innerHTML = `
           <div class="featured-content">
@@ -27,7 +25,6 @@ function displayData() {
                <p class="moreArticle">${post.content}</p>
                <span>Written by ${post.author}</span>
                <span>${post.date}</span>
-               
                <div class="comments-section">
                  <h3>Comments</h3>
                  <ul class="comments-list">
@@ -47,11 +44,11 @@ function displayData() {
                  }">Post Comment</button>
                </div>
             </div>
-            <a href="#" class="read-more">Read More</a> <!-- MOVED INSIDE -->
+            <a href="#" class="read-more">Read More</a> <!-- BUTTON INSIDE -->
           </div>
         `;
 
-        setupReadMoreButtons(); // Attach event after updating DOM
+        setupReadMoreButtons(); // Attach event listener
         setupCommentFunctionality();
       }
     });
@@ -145,15 +142,15 @@ function setupCommentFunctionality() {
 }
 
 function setupReadMoreButtons() {
-  document.addEventListener("click", function (event) {
+  document.body.addEventListener("click", function (event) {
     if (event.target.classList.contains("read-more")) {
       event.preventDefault();
 
-      // Find the closest parent that contains the full article
+      // Find the closest parent post container
       const postContainer = event.target.closest(".featured-content, article");
-      if (!postContainer) return; // Ensure we're inside a post
+      if (!postContainer) return;
 
-      // Find the corresponding moreContent div
+      // Find the moreContent section inside the post
       const moreContent = postContainer.querySelector(".moreContent");
 
       if (moreContent) {
