@@ -250,6 +250,7 @@ function navigationBar() {
     });
   });
 }
+//adding blog section
 
 //submitting form
 function form() {
