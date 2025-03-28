@@ -184,6 +184,7 @@ article {
   display: flex;
   justify-content: space-between;
   background: white;
+  color: black;
   padding: 5px;
   border-radius: 3px;
   margin-bottom: 5px;
