@@ -158,8 +158,15 @@ function setupReadMoreButtons() {
   document.addEventListener("click", function (event) {
     if (event.target.classList.contains("read-more")) {
       event.preventDefault();
-      const moreContent = event.target.previousElementSibling;
-      if (moreContent && moreContent.classList.contains("moreContent")) {
+
+      // Find the closest parent that contains the full article
+      const postContainer = event.target.closest(".featured-content, article");
+      if (!postContainer) return; // Ensure we're inside a post
+
+      // Find the corresponding moreContent div
+      const moreContent = postContainer.querySelector(".moreContent");
+
+      if (moreContent) {
         if (
           moreContent.style.display === "none" ||
           moreContent.style.display === ""
