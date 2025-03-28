@@ -17,23 +17,15 @@ function displayData() {
       if (data.length > 0) {
         const post = data[0]; // use the first post
 
-        // Log each post for testing
-        data.forEach((item) => {
-          console.log(item);
-          console.log("hellooo");
-        });
-
-        // <img>${post.image}</img>
         // Access the home div and update the content using fetched data
         const home = document.getElementById("home");
         home.innerHTML = `
-        
           <div class="featured-content">
             <h2>${post.title}</h2>
             <p>${post.excerpt}</p>
-            <div class="moreContent" >  
-               <p class="moreArticle" >${post.content}</p>
-               <span>Written by${post.author}</span>
+            <div class="moreContent" style="display: none;">  
+               <p class="moreArticle">${post.content}</p>
+               <span>Written by ${post.author}</span>
                <span>${post.date}</span>
                
                <div class="comments-section">
@@ -55,14 +47,12 @@ function displayData() {
                  }">Post Comment</button>
                </div>
             </div>
+            <a href="#" class="read-more">Read More</a> <!-- MOVED INSIDE -->
           </div>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-         
         `;
-        setupReadMoreButtons();
+
+        setupReadMoreButtons(); // Attach event after updating DOM
         setupCommentFunctionality();
-        // Create an event listener for the read more button
       }
     });
 }
