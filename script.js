@@ -32,7 +32,11 @@ function displayData() {
                       post.comments
                         ? post.comments
                             .map(
-                              (comment) => `<li class="comment">${comment}</li>`
+                              (comment, index) => `
+                        <li class="comment">
+                          ${comment} 
+                          <button class="delete-comment" data-id="${post.id}" data-index="${index}">❌</button>
+                        </li>`
                             )
                             .join("")
                         : ""
@@ -89,7 +93,11 @@ function displayOtherPosts() {
                       post.comments
                         ? post.comments
                             .map(
-                              (comment) => `<li class="comment">${comment}</li>`
+                              (comment, index) => `
+                        <li class="comment">
+                          ${comment} 
+                          <button class="delete-comment" data-id="${post.id}" data-index="${index}">❌</button>
+                        </li>`
                             )
                             .join("")
                         : ""
@@ -140,25 +148,45 @@ function handleCommentClick(event) {
           const updatedComments = post.comments
             ? [...post.comments, newComment]
             : [newComment];
-
           return fetch(`https://tech-and-tunez.onrender.com/posts/${postId}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ comments: updatedComments }),
           });
         })
-        .then((res) => res.json())
-        .then((updatedPost) => {
+        .then(() => {
           const commentList =
             event.target.parentElement.querySelector(".comments-list");
           commentList.insertAdjacentHTML(
             "beforeend",
-            `<li class="comment">${newComment}</li>`
+            `<li class="comment">${newComment} <button class="delete-comment" data-id="${postId}" data-index="${commentList.children.length}">❌</button></li>`
           );
           commentInput.value = "";
         })
         .catch((error) => console.error("Error updating comments:", error));
     }
+  }
+
+  if (event.target.classList.contains("delete-comment")) {
+    const postId = event.target.getAttribute("data-id");
+    const commentIndex = event.target.getAttribute("data-index");
+
+    fetch(`https://tech-and-tunez.onrender.com/posts/${postId}`)
+      .then((res) => res.json())
+      .then((post) => {
+        const updatedComments = post.comments.filter(
+          (_, index) => index != commentIndex
+        );
+        return fetch(`https://tech-and-tunez.onrender.com/posts/${postId}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ comments: updatedComments }),
+        });
+      })
+      .then(() => {
+        event.target.parentElement.remove(); // Remove from UI
+      })
+      .catch((error) => console.error("Error deleting comment:", error));
   }
 }
 
