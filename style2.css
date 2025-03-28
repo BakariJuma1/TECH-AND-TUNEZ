@@ -180,7 +180,9 @@ article {
   border-radius: 5px;
   margin-top: 15px;
 }
-
+.comments-section h3 {
+  color: black;
+}
 .comment {
   display: flex;
   justify-content: space-between;
