@@ -25,6 +25,7 @@ To view the project locally:
 
    
    git clone https://github.com/bakarijuma1/TECH-AND-TUNEZ.git
+   
 2.Navigate into the project directory
    $cd TECH-AND-TUNEZ
 3.Open index.html in your browser to view the site locally.
