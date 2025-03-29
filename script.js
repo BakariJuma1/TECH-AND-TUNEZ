@@ -20,6 +20,7 @@ function displayData() {
         const home = document.getElementById("home");
         home.innerHTML = `
           <div class="featured-content">
+           <img src="${post.image}" alt="${post.title}" />
             <h2>${post.title}</h2>
             <p>${post.excerpt}</p>
             <div class="moreContent" style="display: none;">  
@@ -203,7 +204,7 @@ function setupReadMoreButtons() {
 
       // Find the moreContent section inside the post
       const moreContent = postContainer.querySelector(".moreContent");
-
+      console.log(moreContent);
       if (moreContent) {
         if (
           moreContent.style.display === "none" ||
@@ -301,7 +302,35 @@ function addBlog() {
 }
 
 //adding blog to page
+function addBlogToPage(post) {
+  const section =
+    post.category === "tech"
+      ? document.querySelector("#tech .blog-posts")
+      : document.querySelector("#music .blog-post");
 
+  const postHTML = `
+    <article>
+      <img src="${post.image}" alt="${post.title}">
+      <h3>${post.title}</h3>
+      <p>${post.excerpt}</p>
+      <div class="moreContent" style="display: none;">
+        <p>${post.content}</p>
+        <span>By ${post.author}</span>
+        <span>${post.date}</span>
+        <div class="comments-section">
+          <h3>Comments</h3>
+          <ul class="comments-list"></ul>
+          <input type="text" class="comment-input" placeholder="Add a comment...">
+          <button class="comment-btn" data-id="${post.id}">Post Comment</button>
+        </div>
+      </div>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+  `;
+  section.insertAdjacentElement("afterbegin", postHTML); //add post to page
+  setupReadMoreButtons();
+  setupCommentFunctionality();
+}
 //submitting form
 function form() {
   const contactUs = document.getElementById("contact");

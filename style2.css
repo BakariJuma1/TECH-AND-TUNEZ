@@ -151,9 +151,9 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-image: url("https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A=");
+  /* background-image: url("https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A="); */
   padding: 40px;
-  color: white;
+  color: black;
   word-wrap: break-word;
   border-radius: var(--radius-lg);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
@@ -361,6 +361,7 @@ body.dark-mode form textarea {
     grid-template-columns: 1fr;
     gap: 10px;
     text-align: center;
+    /* background-color: white; */
     /* max-width: 90%; */
   }
   .featured {
