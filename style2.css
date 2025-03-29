@@ -102,6 +102,7 @@ nav li {
 }
 
 nav a {
+  color: white;
   display: block;
   text-decoration: none;
   color: var(--text-color);
@@ -170,7 +171,7 @@ section {
   margin-bottom: 0.8rem;
 }
 .moreArticle {
-  font-size: 100px;
+  font: size 0;
 }
 .blog-posts {
   display: grid;
@@ -411,6 +412,10 @@ body.dark-mode form textarea {
   }
 }
 @media only screen and (max-width: 460px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
   .featured {
     width: 95%; /* Adjust width for better fit */
     padding: 15px; /* Reduce padding */
