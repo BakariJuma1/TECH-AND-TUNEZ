@@ -286,6 +286,7 @@ function addBlog() {
     const newPost = {
       title,
       author,
+      date,
       category,
       content,
       image,
