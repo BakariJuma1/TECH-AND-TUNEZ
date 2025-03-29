@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupCommentFunctionality();
   setupReadMoreButtons();
   addBlog();
-  addBlogToPage();
+  // addBlogToPage();
   // double();
   form();
 });
@@ -85,6 +85,7 @@ function displayOtherPosts() {
       otherPosts.forEach((post) => {
         console.log("working");
         const postHTML = `
+        <div class="blog-posts">
           <article>
             <img src="${post.image}" alt="${post.title}" />
             <h3>${post.title}</h3>
@@ -121,7 +122,7 @@ function displayOtherPosts() {
 
           </article>
 
-          
+          </div>
         `;
 
         // Add to tech or music section based on category
@@ -300,19 +301,31 @@ function addBlog() {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Blog added successfully");
-        addBlogToPage(data); // Update UI
-        document.getElementById("blogForm").reset(); // Clear form fields
+        console.log("new post data", data);
+        if (data && data.category) {
+          alert("Blog added successfully");
+          addBlogToPage(data); // Update UI
+          document.getElementById("blogForm").reset();
+        } else {
+          console.error("received invalid data", data);
+        } // Clear form fields
       });
   });
 }
 
 //adding blog to page
 function addBlogToPage(post) {
+  if (!post || !post.category) {
+    console.error("Invalid post object", post);
+    return; //  return if the post object is invalid
+  }
+
   const section =
     post.category === "tech"
       ? document.querySelector("#tech .blog-posts")
-      : document.querySelector("#music .blog-post");
+      : document.querySelector("#music .blog-posts");
+
+  console.log("Section for post category", post.category, section);
 
   const postHTML = `
     <article>
