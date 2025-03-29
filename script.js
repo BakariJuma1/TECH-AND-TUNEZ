@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupCommentFunctionality();
   setupReadMoreButtons();
   addBlog();
+  addBlogToPage();
   // double();
   form();
 });
@@ -21,6 +22,8 @@ function displayData() {
         const post = data[0]; // First post
 
         const home = document.getElementById("home");
+        console.log(home);
+
         home.innerHTML = `
           <div class="featured-content">
          

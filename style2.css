@@ -149,14 +149,14 @@ section {
   padding: 2em 0;
 }
 
-.featured {
+.featured-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-image: url("https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A=");
   background-size: cover;
-  padding: 2rem 1.5rem;
+  padding: 1.8rem 1.2rem;
   width: 100%;
   min-height: 300px;
   margin: 1em auto;
@@ -165,28 +165,12 @@ section {
   border-radius: var(--radius-lg);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
 }
-.featured::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("https://media.istockphoto.com/id/2166551077/photo/technology-artificial-intelligence-digital-ai-hand-concept-on-cyber-future-business-tech.jpg?s=2048x2048&w=is&k=20&c=TslXdp3y7u7zuPj3sype2-OxJc3_CFQLQD2HGikHD9A=");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5;
-  z-index: -1;
+.featured-content h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
 }
-.featured::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Adjust darkness (0.3 to 0.7) */
-  z-index: -1;
+.moreArticle {
+  font-size: 100px;
 }
 .blog-posts {
   display: grid;
