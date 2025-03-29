@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   form();
 });
 
+{
+  /* <img src="${post.image}" alt="${post.title}" /> */
+}
 function displayData() {
   fetch("https://tech-and-tunez.onrender.com/posts")
     .then((res) => res.json())
@@ -20,7 +23,7 @@ function displayData() {
         const home = document.getElementById("home");
         home.innerHTML = `
           <div class="featured-content">
-           <img src="${post.image}" alt="${post.title}" />
+         
             <h2>${post.title}</h2>
             <p>${post.excerpt}</p>
             <div class="moreContent" style="display: none;">  
